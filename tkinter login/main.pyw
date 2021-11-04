@@ -2,8 +2,8 @@ from tkinter import *
 import sys, os
 import newlogins as logins
 
-bg_color = 'grey17'
-fg_color = 'lime'
+bg_color = '#111'
+fg_color = '#00ee00'
 
 lookup = dict(zip(logins.users, logins.passes))
 
@@ -60,8 +60,8 @@ def start_page():
     global lge1, lge2, sue1, sue2
     spc1 = Frame(root,width=30,bg=bg_color)
     spc2 = Frame(root,width=30,bg=bg_color)
-    frame1 = Frame(root,width=250, relief=RAISED, bd = 3, bg=bg_color)
-    frame2 = Frame(root,width=250, relief=RAISED, bd = 3, bg=bg_color)
+    frame1 = Frame(root,width=250, bg=bg_color)#, relief=RAISED, bd = 3)
+    frame2 = Frame(root,width=250, bg=bg_color)#, relief=RAISED, bd = 3)
 
     #login box
     lgspc1 = Frame(frame1,height=10,width=250,bg=bg_color)
@@ -130,11 +130,13 @@ def main():
     root.geometry('600x400')
     root.title('Login')
     root.config(bg=bg_color)
-    #root.minsize(height=250,width=590) #TODO once i get other shit setup
-    root.resizable(False, False)
+    root.minsize(height=375,width=590) #TODO once i get other shit setup
+    #root.resizable(False, False)
     #title
-    title = Label(root,text='LOGIN WIP',font=('Terminal',36),bg=bg_color,fg=fg_color)
-    title.place(y=30,x=140)
+    ssp = Frame(root,height=30,bg=bg_color)
+    title = Label(root,text='LOGIN (WIP)',font=('Terminal',36),bg=bg_color,fg=fg_color)
+    ssp.pack()
+    title.pack()
     #start page
     start_page()
     #bottom
